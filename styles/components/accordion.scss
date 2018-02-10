@@ -1,0 +1,116 @@
+
+.accordion {
+  background-color: #eee;
+  color: #444;
+  padding: 0 15px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.75s;
+  margin-bottom: -15px;
+}
+
+.accordion-content {
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  .container {
+    padding: 0;
+  }
+}
+
+.accordion-title {
+  border: 1px solid #058;
+  color: white;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.accordion-title:focus,
+.accordion-title:hover {
+  border: 1px solid #058;
+  color: white;
+}
+
+:last-child:not(.is-active) > .accordion-title {
+  &.accordion-xs {
+    border: 1px solid #058;
+  }
+}
+
+:last-child:not(.is-active) > .accordion-title:focus {
+  &.accordion-xs {
+    border: 1px solid #058;
+  }
+}
+
+.accordion-item {
+  margin-bottom: 0;
+}
+
+
+/* Tabs */
+
+.tabs {
+  margin-bottom: 15px;
+  background-color: transparent;
+  border: 0;
+}
+
+.tabs-content {
+  padding: 0;
+}
+
+.tabs-panel {
+  padding: 0;
+}
+
+.tabs-title,
+.tab-accordion-title {
+  margin-right: 15px;
+  &.is-active {
+    a {
+      background-color: #f8904b;
+      border: 2px solid #f8904b;
+      color: white;
+    }
+  }
+  a {
+    background-color: #3b72bf;
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    border: 2px solid white;
+    margin-top: 15px;
+    &:hover,
+    &:focus {
+      background-color: #f8904b;
+      border: 2px solid #f8904b;
+      color: white;
+    }
+  }
+}
+
+:last-child:not(.is-active) > .accordion-title {
+  border: 2px solid white;
+}
+
+:last-child:not(.is-active) > .accordion-title:focus {
+  border: 2px solid #f8904b;
+}
+
+:last-child>.accordion-content:last-child {
+  border-bottom: 0;
+}
+
+
+
+@media only screen and ( min-width: 1200px ) {
+  
+  .accordion {
+    padding: 0;
+  }
+
+}

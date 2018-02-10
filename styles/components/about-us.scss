@@ -1,0 +1,175 @@
+
+.about-us-bg-image {
+  width: 100%;
+  object-fit: cover;
+  min-height: 800px;
+}
+
+.about-us-carousel-bg {
+  height: 100%;
+  max-height: 520px;
+  position: relative;
+  .about-us-carousel-desc {
+    opacity: 0;
+    overflow: hidden;
+  }
+
+  & + .slick-center {
+    .about-us-carousel-desc {
+      opacity: 1;
+      overflow: visible;
+    }
+  }
+}
+
+.about-us-carousel {
+  .slick-track {
+    align-items: center;
+    display: flex;
+  }
+}
+
+.about-us-carousel-desc {
+  bottom: -30px;
+  left: 0;
+  margin-bottom: 0;
+  position: absolute;
+  right: 0;
+}
+
+.about-us-row {
+  position: relative;
+}
+
+.slick-next, .slick-arrow {
+  width: 48px;
+  height: 46px;
+  border-radius: 50%;
+  background-color: white;
+  z-index: 2;
+}
+
+.slick-arrow {
+  &:hover {
+    background-color: #f8904b;
+  }
+  &:focus {
+    background-color: white;
+  }
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: #f8904b;
+  font-size: 50px;
+  position: absolute;
+  top: 2.5px;
+  right: -1px;
+}
+
+.slick-next {
+  right: 15px;
+  &:hover {
+color: #f8904b;
+  }
+}
+
+.slick-prev {
+  left: 15px;
+  &:hover {
+    color: #f8904b;
+  }
+}
+
+.slick-prev:hover:before,
+.slick-next:hover:before {
+  color: white;
+}
+
+.slick-prev:focus:before,
+.slick-next:focus:before, {
+  color: #f8904b;
+  z-index: 3;
+}
+
+.about-us-logo-fcb {
+  position: absolute;
+  bottom: 90px;
+  max-width: 75px;
+  left: 140px;
+}
+
+
+
+@media only screen and (min-width: 960px) {
+
+  .about-us-carousel-bg {
+    filter: blur(5px);
+    max-height: 360px;
+    transition: all .3s cubic-bezier( .4, 0, .2, 1 );
+    & + .slick-center {
+      filter: blur(0);
+      max-height: 520px;
+    }
+
+  }
+
+  .slick-prev:before,
+  .slick-next:before {
+    color: #f8904b;
+    font-size: 61px;
+    position: absolute;
+    top: 2.5px;
+    right: -0.5px;
+  }
+
+  .slick-next {
+    right: 30px;
+  }
+
+  .slick-prev {
+    left: 30px;
+  }
+
+  .slick-next, .slick-arrow {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: white;
+    z-index: 2;
+  }
+
+  .slick-prev:before,
+  .slick-next:before {
+    color: #f8904b;
+    font-size: 61px;
+    position: absolute;
+    top: 2.5px;
+    right: -0.5px;
+  }
+
+}
+
+
+
+
+@media only screen and (min-width: 1200px) {
+
+  .about-us-bg-image {
+    min-height: 0;
+    max-height: 800px;
+  }
+
+  .about-us-row-content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .about-us-logo-fcb {
+    left: 160px;
+  }
+
+}

@@ -1,0 +1,133 @@
+
+.beer-bg-figure {
+  img {
+    min-height: 1880px;
+    object-fit: cover;
+    max-height: 840px;
+    width: 100%;  
+  }
+}
+
+.beer-row {
+  position: relative;
+  min-height: 500px;
+}
+
+.beer-row-main {
+  .beer-col-main:nth-child(odd) {
+    .beer-row-desc {
+      .beer-col-desc {
+        background-color: #c60016;
+        padding: 15px;        
+      }
+    }
+  }
+  .beer-col-main:nth-child(even) {
+    .beer-row-desc {
+      .beer-col-desc {
+        background-color: #444242;
+        padding: 15px;       
+      }
+    }
+  }
+}
+
+.beer-figure-logo {
+  border-bottom: 3px solid white;
+  img {
+    max-width: 100px;
+  }
+}
+
+.beer-container-price {
+  border-top: 3px solid white;
+  border-bottom: 3px solid white;
+  .beer-row-price:nth-child(odd) {
+    border-bottom: 3px solid white;
+  }
+}
+
+.beer-col-amount {
+  border-right: 3px solid white;
+}
+
+.beer-figure-beer {
+  img {
+    max-height: 460px;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.beer-row-logo {
+  img {
+    position: absolute;
+    top: 100px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+  }
+}
+
+
+
+@media only screen and (min-width: 720px) {
+  .beer-bg-figure {
+    img {
+      min-height: 1150px;
+      object-fit: cover;
+      max-height: 840px;
+      width: 100%;  
+    }
+  }
+}
+
+
+
+@media only screen and (min-width: 960px) {
+
+  .beer-bg-figure {
+    img {
+      min-height: 1200px;
+      width: 100%;  
+    }
+  }
+
+  
+  
+}
+
+
+
+@media only screen and (min-width: 1200px) {
+
+  .beer-bg-figure {
+    img {
+      min-height: 0;
+      max-height: 750px;
+      width: 100%;  
+    }
+  }
+
+  .beer-row-logo {
+    img {
+      top: 60px;
+    }
+  }
+
+  .beer-row {
+    position: relative;
+    min-height: inherit;
+  }
+
+  .beer-content-row {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto 50px;
+  }
+
+}

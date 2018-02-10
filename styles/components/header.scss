@@ -1,0 +1,20 @@
+
+
+
+
+@media only screen and (min-width: 960px) {
+ 
+  #header {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 2;
+  }
+
+  .header-row {
+  	font-family: 'Josefin Sans', sans-serif;
+  	font-size: 18px;
+  	font-weight: bold;
+  }
+
+}

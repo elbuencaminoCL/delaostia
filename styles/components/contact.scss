@@ -1,0 +1,51 @@
+
+.contact-row {
+  position: relative;
+}
+
+.contact-content-row {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+
+.contact-bg-figure {
+  img {
+    min-height: 350px;
+    object-fit: cover;
+  }
+}
+
+
+@media only screen and (min-width: 720px) {
+
+}
+
+
+
+@media only screen and (min-width: 960px) {
+    
+  .contact-content-row {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+
+
+@media only screen and (min-width: 1200px) {
+  .contact-bg-figure {
+    img {
+      min-height: 0;
+      object-fit: cover;
+      max-height: 600px;
+      width: 100%;
+    }
+  }
+}

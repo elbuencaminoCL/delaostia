@@ -1,0 +1,115 @@
+
+.f-title {
+  font-family: 'spidershankregular';
+  font-size: 70px;
+}
+
+.f-josefin-16 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.f-josefin-16-sb {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.f-josefin-18 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 18px !important;
+  font-weight: bold;
+}
+
+.f-josefin-18-sb {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 18px !important;
+  font-weight: 500;
+}
+
+.f-josefin-66{
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 66px;
+}
+
+.f-josefin-23 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 23px;
+  font-weight: bold;
+}
+
+.f-josefin-25 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+
+
+
+.F {
+  text-transform: uppercase;
+}
+
+.f-bigger {
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.f-big {
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.f-normal {
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.f-small {
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.f-small-xs {
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.f-small-i {
+  font-size: 13px !important;
+}
+
+.f-tiny {
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+a {
+  &.f-white {
+    &:hover {
+      text-decoration: underline;
+      transition: text-decoration .75s ease;
+      color: white;
+    }
+    &:focus {
+      text-decoration: underline;
+      color: white;
+    }
+  }
+}
+
+
+
+@media only screen and (min-width: 960px) {
+
+  .f-small-xs {
+    font-size: 0;
+  }
+
+  .f-normal-md {
+    font-size: 16;
+  }
+  
+}
