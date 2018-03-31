@@ -16,9 +16,9 @@ function my_acf_init() {
 add_action('acf/init', 'my_acf_init');
 
 
+
 add_action('wp_ajax_load_posts_by_ajax', 'load_posts_by_ajax_callback');
 add_action('wp_ajax_nopriv_load_posts_by_ajax', 'load_posts_by_ajax_callback');
-
 
 function load_posts_by_ajax_callback() {
 	check_ajax_referer('load_more_posts', 'security');
@@ -35,9 +35,9 @@ function load_posts_by_ajax_callback() {
 	if ( $my_posts->have_posts() ) :
 		?>
 		<?php while ( $my_posts->have_posts() ) : $my_posts->the_post() ?>
-			<div class="row row-xs-3 row-sm-3 row-md-3 row-lg-3 middle-xs space-bottom menu-new-post menuPost">                    
+			<div class="row row-xs-3 row-sm-3 row-md-3 row-lg-3 middle-xs space-bottom menu-new-post menuPost">
         <div class="col-xs-3 col-sm-2 col-md-3 col-lg-2 center-xs">
-          <p><?php the_field('menu_price'); ?></p>                            
+          <p><?php the_field('menu_price'); ?></p>
         </div>
 
         <div class="col-xs-6 col-sm-8 col-md-6 col-lg-8 menu-col-title-desc">
@@ -53,6 +53,4 @@ function load_posts_by_ajax_callback() {
 		<?php
 	endif;
 
-	
 }
-

@@ -23,6 +23,7 @@
 }
 
 .about-us-carousel {
+  display: none;
   .slick-track {
     align-items: center;
     display: flex;
@@ -103,9 +104,13 @@ color: #f8904b;
 
 @media only screen and (min-width: 960px) {
 
+  .about-us-carousel {
+    display: inherit;
+  }
+
   .about-us-carousel-bg {
     filter: blur(5px);
-    max-height: 360px;
+    max-height: 250px;
     transition: all .3s cubic-bezier( .4, 0, .2, 1 );
     & + .slick-center {
       filter: blur(0);
@@ -117,10 +122,10 @@ color: #f8904b;
   .slick-prev:before,
   .slick-next:before {
     color: #f8904b;
-    font-size: 61px;
+    font-size: 64px;
     position: absolute;
     top: 2.5px;
-    right: -0.5px;
+    right: -2px;
   }
 
   .slick-next {
@@ -137,15 +142,6 @@ color: #f8904b;
     border-radius: 50%;
     background-color: white;
     z-index: 2;
-  }
-
-  .slick-prev:before,
-  .slick-next:before {
-    color: #f8904b;
-    font-size: 61px;
-    position: absolute;
-    top: 2.5px;
-    right: -0.5px;
   }
 
 }

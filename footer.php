@@ -15,38 +15,39 @@
 
     <script src="<?= get_template_directory_uri(); ?>/dist/bundle.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-      <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){
         $('.about-us-carousel').slick({
           centerMode: true,
-            centerPadding: '60px 30px',
-            infinite: true,
-            slidesToShow: 3,
-            variableWidth: true,
-            autoplay: true,
-            autoplaySpeed: 2500,
-            responsive: [
-              {
-                breakpoint: 768,
-                settings: {
-                  arrows: false,
-                  centerMode: true,
-                  centerPadding: '40px',
-                  slidesToShow: 1
-                }
-              },
-              {
-                breakpoint: 480,
-                settings: {
-                  arrows: false,
-                  centerMode: true,
-                  centerPadding: '40px',
-                  slidesToShow: 1
-                }
+          centerPadding: '60px 30px',
+          infinite: true,
+          slidesToShow: 3,
+          variableWidth: true,
+          autoplay: false,
+          autoplaySpeed: 2500,
+          responsive: [
+            {
+              breakpoint: 768,
+              settings: {
+                arrows: false,
+                centerMode: true,
+                centerPadding: '40px',
+                slidesToShow: 1
               }
-            ]
+            },
+
+            {
+              breakpoint: 480,
+              settings: {
+                arrows: false,
+                centerMode: true,
+                centerPadding: '40px',
+                slidesToShow: 1
+              }
+            }
+          ]
         });
 
       });
@@ -247,49 +248,25 @@
     </script>
 
     <script type="text/javascript">
-    var ajaxurl = "<?php echo admin_url( 'admin-ajax.php' ); ?>";
-    var page = 2;
+        var ajaxurl = "<?php echo admin_url( 'admin-ajax.php' ); ?>";
+        var page = 2;
+        function loadMoreCategory(idCat, numberPost, menuTabPost) {
+          var data = {
+            'action': 'load_posts_by_ajax',
+            'cat': idCat,
+            'page': page,
+            'security': '<?php echo wp_create_nonce("load_more_posts"); ?>'
+          };
+          $( '.menuPost-' + menuTabPost ).removeClass('menu-new-post')
+          $( '.menuPost-' + menuTabPost ).addClass('hide-xs')
+          $.post(ajaxurl, data, function(response) {
+            $( '.post-menu-' + numberPost ).append(response);
+            page++;
+          });
+        };
+        </script>
 
-    function loadMoreCategory(idCat, numberPost, menuTabPost) {
-      var data = {
-        'action': 'load_posts_by_ajax',
-        'cat': idCat,
-        'page': page,
-        'security': '<?php echo wp_create_nonce("load_more_posts"); ?>'
-      };
 
-      $( '.menuPost-' + menuTabPost ).removeClass('menu-new-post')
-      $( '.menuPost-' + menuTabPost ).addClass('hide-xs')
-
-
-      $.post(ajaxurl, data, function(response) {
-        $( '.post-menu-' + numberPost ).append(response);
-        page++;
-      });
-    };
-    </script>
 
   </body>
 </html>
-
-
-
-<!-- <script type="text/javascript">
-var ajaxurl = "<?php echo admin_url( 'admin-ajax.php' ); ?>";
-var page = 1;
-jQuery(function($) {
-  $('.loadmore').on('click', function() {
-    var data = {
-      'action': 'load_posts_by_ajax',
-      'cat': 4,
-      'page': page,
-      'security': '<?php echo wp_create_nonce("load_more_posts"); ?>'
-    };
-
-    $.post(ajaxurl, data, function(response) {
-      $('.my-posts').append(response);
-      page++;
-    });
-  });
-});
-</script> -->
