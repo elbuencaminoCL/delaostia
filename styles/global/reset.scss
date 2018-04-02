@@ -60,7 +60,7 @@ a {
 }
 
 body {
-  background-color: #fab060;
+  background-color: #083c61;
   color: white;
 }
 
@@ -76,5 +76,14 @@ figure {
     width: 100%;
     background-position: center center;
     background-size: cover;
+  }
+}
+
+
+
+@media only screen and ( min-width: 960px ) {
+  body {
+    background-color: #fab060;
+    color: white;
   }
 }

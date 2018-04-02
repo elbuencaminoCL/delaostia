@@ -11,6 +11,10 @@
   margin-bottom: 15px;
 }
 
+.mg-bottom-xs-15 {
+  margin-bottom: 15px;
+}
+
 .mg-bottom-15n {
   margin-bottom: -15px;
 }
@@ -35,12 +39,24 @@
   margin-bottom: 60px;
 }
 
+.mg-top-xs-30 {
+  margin-top: 30px;
+}
+
+.mg-top-15 {
+  margin-top: 15px;
+}
+
 .mg-top-60 {
   margin-top: 60px;
 }
 
 .mg-right-15 {
   margin-right: 15px;
+}
+
+.mg-right-30 {
+  margin-right: 30px;
 }
 
 .pd-10 {
@@ -67,13 +83,13 @@
 
 
 @media only screen and (min-width: 480px) {
-  
+
 }
 
 
 
 @media only screen and (min-width: 640px) {
-  
+
   .hide-640 {
     display: none;
   }
@@ -83,7 +99,15 @@
 
 
 @media only screen and (min-width: 960px) {
-  
+
+  .mg-top-xs-30 {
+    margin-top: 0;
+  }
+
+  .mg-bottom-xs-15 {
+    margin-bottom: 0;
+  }
+
   .mg-bottom-xs-30 {
     margin-bottom: 0;
   }

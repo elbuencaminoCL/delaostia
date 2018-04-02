@@ -1,15 +1,27 @@
 
   <section class="hide-md">
     <div class="container">
-      <div class="bg-red-dark row pd-5-15 middle-xs">
-        <i class="material-icons f-star mg-right-15">star</i>
-        <p class="mg-bottom-0">Pregunta por la tapa o el pintxo<br class="hide-640"> Estrella de la semana.</p>
+      <div class="bg-red-dark row row-xs-2 pd-5-15 middle-xs mg-top-15">
+        <div class="col-xs-3">
+          <i class="material-icons f-star mg-right-15">star</i>
+        </div>
+
+        <div class="col-xs-9">
+          <?php the_field( 'footer_title' ); ?>
+        </div>
       </div>
 
-      <div class="bg-blue-dark center-xs pd-30">
-        <p>Orrego Luco 065, Providencia</p>
-        <p><a href="tel+56224434444" class="f-white">+56 224 434 444</a></p>
-      </div>
+      <?php if ( have_rows( 'footer_repeater' ) ) : ?>
+        <?php while ( have_rows( 'footer_repeater' ) ) : the_row(); ?>
+          <div class="bg-blue-dark center-xs pd-30">
+            <div><?php the_sub_field( 'footer_address' ); ?></div>
+            <a href="tel<?php the_sub_field( 'footer_phone' ); ?>" class="f-white">
+              <?php the_sub_field( 'footer_phone' ); ?>
+            </a>
+          </div>
+        <?php endwhile; ?>
+      <?php endif; ?>
+
     </div>
   </section>
 
@@ -25,7 +37,7 @@
           infinite: true,
           slidesToShow: 3,
           variableWidth: true,
-          autoplay: false,
+          autoplay: true,
           autoplaySpeed: 2500,
           responsive: [
             {
@@ -248,23 +260,23 @@
     </script>
 
     <script type="text/javascript">
-        var ajaxurl = "<?php echo admin_url( 'admin-ajax.php' ); ?>";
-        var page = 2;
-        function loadMoreCategory(idCat, numberPost, menuTabPost) {
-          var data = {
-            'action': 'load_posts_by_ajax',
-            'cat': idCat,
-            'page': page,
-            'security': '<?php echo wp_create_nonce("load_more_posts"); ?>'
-          };
-          $( '.menuPost-' + menuTabPost ).removeClass('menu-new-post')
-          $( '.menuPost-' + menuTabPost ).addClass('hide-xs')
-          $.post(ajaxurl, data, function(response) {
-            $( '.post-menu-' + numberPost ).append(response);
-            page++;
-          });
+      var ajaxurl = "<?php echo admin_url( 'admin-ajax.php' ); ?>";
+      var page = 2;
+      function loadMoreCategory(idCat, numberPost, menuTabPost) {
+        var data = {
+          'action': 'load_posts_by_ajax',
+          'cat': idCat,
+          'page': page,
+          'security': '<?php echo wp_create_nonce("load_more_posts"); ?>'
         };
-        </script>
+        $( '.menuPost-' + menuTabPost ).removeClass('menu-new-post')
+        $( '.menuPost-' + menuTabPost ).addClass('hide-xs')
+        $.post(ajaxurl, data, function(response) {
+          $( '.post-menu-' + numberPost ).append(response);
+          page++;
+        });
+      };
+    </script>
 
 
 
