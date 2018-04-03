@@ -8,6 +8,7 @@
 
 .location-row {
   position: relative;
+  margin-bottom: 60px;
 }
 
 .tabs-content {
@@ -54,8 +55,18 @@
 
 
 
+@media only screen and (min-width: 1152px) {
+
+  .location-row {
+    margin-bottom: 0;
+  }
+
+}
+
+
+
 @media only screen and (min-width: 1200px) {
-  
+
   .location-bg-figure {
     img {
       min-height: 0;
