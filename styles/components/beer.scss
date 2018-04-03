@@ -5,9 +5,8 @@
 .popup-2,
 .popup-3,
 .popup-4 {
-  visibility: hidden;
-  opacity: 0;
-  margin-top: -300px;
+  display: none;
+  margin-top: auto;
 }
 
 .popup-1,
@@ -15,8 +14,7 @@
 .popup-3,
 .popup-4 {
   &.is-active {
-    visibility:visible;
-    opacity: 1;
+    display: initial;
     background-color: rgba(0,0,0,0.8);
     position: fixed;
     top:0;
@@ -31,13 +29,15 @@
 
 .popup-contenedor {
   position: relative;
-  margin:7% auto;
-  padding:30px 50px;
+  margin: auto;
+  top: 12%;
+  padding: 20px;
   background-color: #083c61;
   color: white;
   border-radius: 3px;
-  width:50%;
+  width: 100%;
 }
+
 a.popup-cerrar {
    position: absolute;
    top:3px;
@@ -129,6 +129,29 @@ a.popup-cerrar {
   }
 }
 
+.beer-title {
+  font-size: 50px;
+}
+
+.beer-desc {
+  font-size: 20px;
+  p {
+    line-height: 1.3;
+  }
+}
+
+.beer-logo-modal {
+  max-width: 120px;
+}
+
+
+
+@media only screen and (min-width: 480px) {
+
+  .popup-contenedor {
+    top: 18%;
+  }
+}
 
 
 @media only screen and (min-width: 720px) {
@@ -139,6 +162,11 @@ a.popup-cerrar {
       max-height: 840px;
       width: 100%;
     }
+  }
+
+  .popup-contenedor {
+    top: 25%;
+    width: 90%;
   }
 }
 
@@ -153,6 +181,23 @@ a.popup-cerrar {
     }
   }
 
+  .beer-title {
+    font-size: 70px;
+  }
+
+  .beer-desc {
+    font-size: 23px;
+    p {
+      line-height: 1.6;
+    }
+  }
+
+  .beer-logo-modal {
+    max-width: initial;
+  }
+
+
+
 
 
 }
@@ -160,6 +205,11 @@ a.popup-cerrar {
 
 
 @media only screen and (min-width: 1200px) {
+
+  .popup-contenedor {
+    width: 75%;
+    top: 25%;
+  }
 
   .beer-bg-figure {
     img {

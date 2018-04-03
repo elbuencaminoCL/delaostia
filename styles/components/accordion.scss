@@ -1,4 +1,8 @@
 
+.mg-accordion {
+  margin-bottom: 60px;
+}
+
 .accordion {
   background-color: #eee;
   color: #444;
@@ -108,9 +112,13 @@
 
 
 @media only screen and ( min-width: 1200px ) {
-  
+
   .accordion {
     padding: 0;
+  }
+
+  .mg-accordion {
+    margin-bottom: 0;
   }
 
 }

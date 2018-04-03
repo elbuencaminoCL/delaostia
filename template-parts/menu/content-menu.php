@@ -1,7 +1,7 @@
 
 <section id="menu" class="">
   <div class="container">
-    <div class="menu-row">
+    <div class="menu-row mg-accordion">
       <figure class="menu-bg-figure hide-xs show-lg">
         <img src="<?php the_field( 'menu_bg_image' ); ?>">
       </figure>

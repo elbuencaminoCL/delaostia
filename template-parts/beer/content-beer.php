@@ -26,14 +26,14 @@
 
               <div class="modalWrapper popup-<?= $counterBeer; ?>" id="popup-<?= $counterBeer; ?>">
                 <div class="row row-xs-1 row-md-2 start-xs middle-xs popup-contenedor bg-blue-dark">
-                  <div class="col-xs-12 col-md-8 beer-reveal">
-                    <h1 class="f-white f-title"><?php the_sub_field( 'beer_modal_title' ); ?></h1> <!-- titulo -->
-                    <div class="f-josefin-23"><?php the_sub_field( 'beer_modal_desc' ); ?></div>
+                  <div class="col-xs-12 col-md-8 beer-reveal mg-bottom-xs-30">
+                    <h1 class="f-white f-title beer-title"><?php the_sub_field( 'beer_modal_title' ); ?></h1> <!-- titulo -->
+                    <div class="f-josefin-23 beer-desc"><?php the_sub_field( 'beer_modal_desc' ); ?></div>
                   </div>
 
                   <div class="col-xs-12 col-md-4 center-xs">
                     <figure>
-                      <img src="<?php the_sub_field( 'beer_logo' ); ?>" />
+                      <img src="<?php the_sub_field( 'beer_logo' ); ?>" class="beer-logo-modal" />
                     </figure>
                   </div>
 
@@ -49,7 +49,6 @@
       <?php endif; ?>
 
     </div>
-
 
     <figure class="mandals hide-xs show-md" style="background-image: url('<?= get_template_directory_uri(); ?>/assets/images/mandals.png')"></figure>
 
