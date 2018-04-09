@@ -23,10 +23,6 @@
         </div>
       </div>
 
-      <!-- <figure class="hide-xs show-md">
-        <img src="<?php the_field( 'clone_about_us_logo' ); ?>" class="about-us-logo-fcb">
-      </figure> -->
-
       <figure class="mandals hide-xs show-md" style="background-image: url('<?= get_template_directory_uri(); ?>/assets/images/mandals.png')"></figure>
     </div>
   </div>

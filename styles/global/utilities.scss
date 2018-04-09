@@ -1,4 +1,36 @@
 
+.pag {
+    text-align: right;
+    margin: 0;
+    padding: 0;
+    margin: 0 0 10px;
+}
+
+.pag {
+  li {
+    display: inline-block;
+    list-style: none;
+    padding: 10px 15px;
+    cursor: pointer;
+  }
+}
+
+.pag {
+  li {
+    &.active {
+      background: #003580;
+      color: white;
+    }
+  }
+}
+
+.contentPagination {
+  &.is-active {
+    display: inherit;
+  }
+}
+
+
 .mg-30-0 {
   margin: 30px 0;
 }

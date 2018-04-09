@@ -32,6 +32,7 @@
 
 	import './js/tabs-accordion.js';
 	import './js/popup.js';
+	import './js/pagination.js';
 
 
 

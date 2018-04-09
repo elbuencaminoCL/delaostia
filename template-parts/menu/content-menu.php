@@ -50,44 +50,27 @@
                     <div class="col-xs-12 col-md-7 col-lg-8 menu-col-1">
                       <h2 class="menu-content-title space-bottom f-josefin-66"><?php the_sub_field('menu_content_title'); ?></h2>
 
-                      <div class="entry-content">
-                        <?php
-                        $numcat = get_sub_field( 'category_id' );
-                        $args = array(
-                          'post_type' => 'menu',
-                          'post_status' => 'publish',
-                          'posts_per_page' => '2',
-                          'cat' => $numcat,
-                          'paged' => $paged,
-                        );
-                        $my_posts = new WP_Query( $args );
-                        if ( $my_posts->have_posts() ) :
-                        ?>
-                          <div class="post-menu-<?= $countContent; ?>"><?php var_dump($countContent)?>
-                            <?php while ( $my_posts->have_posts() ) : $my_posts->the_post() ?>
-                              <div class="row row-xs-3 row-sm-3 row-md-3 row-lg-3 middle-xs space-bottom menuPost-<?= $countContent; ?>">
-                                <div class="col-xs-3 col-sm-2 col-md-3 col-lg-2 center-xs">
-                                  <p class="f-josefin-25"><?php the_field('menu_price'); ?></p>
-                                </div>
+                      <?php
 
-                                <div class="col-xs-6 col-sm-8 col-md-6 col-lg-8 menu-col-title-desc">
-                                  <p class="F f-josefin-25"><strong><?php the_field('menu_title_plate'); ?></strong></p>
-                                  <p class="f-josefin-16-sb"><?php the_field('menu_desc'); ?></p>
-                                </div>
+                      $fieldsRelations = get_sub_field('menu_content');
 
-                                <div class="col-xs-3 col-sm-2 col-md-3 col-lg-2">
-                                  <img src="<?php the_field('menu_image'); ?>" class="menu-image">
+                      if( $fieldsRelations ): ?>
+
+                        <div class="contentPaginationWrap space-bottom">
+                          <?php foreach( $fieldsRelations as $post): // variable must be called $post (IMPORTANT) ?>
+                            <?php setup_postdata($post); ?>
+                                <div class="contentPagination ">
+                                  <a href="<?php the_permalink(); ?>" class="f-white"><?php the_title(); ?></a>
                                 </div>
+                          <?php endforeach; ?>
                               </div>
-                            <?php endwhile; ?>
-                            <?php
-                            // clean up after the query and pagination
-                            wp_reset_postdata();
-                            ?>
-                          </div>
-                        <?php endif; ?>
-                        <div class="loadmore" onclick="loadMoreCategory( <?php the_sub_field( 'category_id' ); ?><?= $countContent; ?> )" >Load More...<?php the_sub_field( 'category_id' ); ?></div>
-                      </div>
+
+                          <a href="#" class="buttonPrev">PREV</a>
+                          <a href="#" class="buttonNext">NEXT</a>
+
+                          <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+                      <?php endif; ?>
+
 
                     </div>
 
