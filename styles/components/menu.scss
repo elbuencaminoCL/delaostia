@@ -40,20 +40,9 @@
 
   .menu-bg-figure {
     img {
-      min-height: 1520px;
+      height: 1080px;
       object-fit: cover;
-    }
-  }
-
-}
-
-
-
-@media only screen and (min-width: 1024px) {
-  
-  .menu-bg-figure {
-    img {
-      min-height: 1150px;
+      width: 100%;
     }
   }
 
@@ -63,18 +52,13 @@
 
 @media only screen and (min-width: 1200px) {
 
-  .menu-bg-figure {
-    img {
-      min-height: 1080px;
-    }
-  }
 
   .menu-content-row {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    margin: auto 50px;
+    bottom: 0;
   }
 
 }

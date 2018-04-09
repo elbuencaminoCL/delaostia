@@ -1,6 +1,6 @@
 
 <section id="contactUs">
-  <div class="container">
+  <div class="">
     <div class="contact-row">
       <figure class="contact-bg-figure">
         <img src="<?php the_field( 'clone_contact_bg_image' ); ?>">

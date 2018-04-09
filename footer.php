@@ -37,7 +37,7 @@
           infinite: true,
           slidesToShow: 3,
           variableWidth: true,
-          autoplay: true,
+          autoplay: false,
           autoplaySpeed: 2500,
           responsive: [
             {
