@@ -42,13 +42,11 @@
                 </div>
 
                  <div class="col-xs-12 col-md-6 col-lg-4">
-                  <?php $location = get_field('location_map_copiar');
-                    if( !empty($location) ):
-                  ?>
-                    <div class="acf-map z-index-2">
-                      <div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>"></div>
-                    </div>
-                  <?php endif; ?>
+                  <figure>
+                    <a href="<?php the_field( 'location_map_link' ); ?>">
+                      <img src="<?php the_sub_field( 'location_map' ); ?>">
+                    </a>
+                  </figure>
                 </div>
 
               </div>

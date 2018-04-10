@@ -12,7 +12,8 @@
   <body>
     <section id="header" class="hide-xs show-md">
       <div class="container">
-        <div class="row row-md-2 header-row menu expanded pd-20 " data-magellan>
+        <?= polylang_flags_shortcode(); ?>
+        <div class="row row-md-2 header-row menu expanded" data-magellan>
           <?php if ( have_rows( 'header_nav_left_repeater' ) ) : ?>
             <div class="col-md-6 row">
             <?php while ( have_rows( 'header_nav_left_repeater' ) ) : the_row(); ?>

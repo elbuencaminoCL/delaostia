@@ -1,4 +1,3 @@
-
 <section id="menu" class="">
   <div class="menu-row mg-accordion">
     <figure class="menu-bg-figure hide-xs show-lg">
@@ -22,7 +21,7 @@
         <?php endif; ?>
       </div>
 
-      <div class="hide-xs show-md">
+      <div class="hide-xs show-md tabsMenuContent">
         <?php if ( have_rows( 'menu_repeater' ) ) : ?>
           <?php $count = 1; ?>
           <div class="tabs center-xs" data-responsive-accordion-tabs="tabs small-accordion large-tabs" id="menuTabs" data-allow-all-closed="true">
@@ -53,21 +52,45 @@
 
                     $fieldsRelations = get_sub_field('menu_content');
 
-                    if( $fieldsRelations ): ?>
+                    if( $fieldsRelations ):
+                      $counter = 1;
+                      $perPage = 3;
+                    ?>
 
-                      <div class="contentPaginationWrap space-bottom">
-                        <?php foreach( $fieldsRelations as $post): // variable must be called $post (IMPORTANT) ?>
-                          <?php setup_postdata($post); ?>
-                              <div class="contentPagination ">
-                                <a href="<?php the_permalink(); ?>" class="f-white"><?php the_title(); ?></a>
+                      <div class="menu-pagination contentPaginationWrap contentPaginationWrap-<?= $countContent; ?> space-bottom">
+                        <?php
+                          $lastElement = end($fieldsRelations);
+                        ?>
+                        <?php foreach( $fieldsRelations as $post): ?>
+                          <?php if( $counter % $perPage == 1 ) : ?>
+                          <div class="contentPagination">
+                          <?php endif; ?>
+                            <?php setup_postdata($post); ?>
+                            <div class="row row-xs-3 row-sm-3 row-md-3 row-lg-3 middle-xs space-bottom menuPost-<?= $countContent; ?>">
+                              <?php if( get_field( 'menu_price' ) ) : ?>
+                              <div class="col-xs-3 col-sm-2 col-md-3 col-lg-2 center-xs">
+                                <p class="f-josefin-25">$ <?= number_format(get_field('menu_price'), 0, '', '.'); ?></p>
                               </div>
-                        <?php endforeach; ?>
+                              <?php endif; ?>
+
+                              <div class="col-xs-6 col-sm-8 col-md-6 col-lg-8 menu-col-title-desc">
+                                <p class="F f-josefin-25"><strong><?php the_field('menu_title_plate'); ?></strong></p>
+                                <p class="f-josefin-16-sb"><?php the_field('menu_desc'); ?></p>
+                              </div>
+
+                              <div class="col-xs-3 col-sm-2 col-md-3 col-lg-2">
+                                <img src="<?php the_field('menu_image'); ?>" class="menu-image">
+                              </div>
                             </div>
+                          <?php if( $counter % $perPage == 0 ) : ?>
+                          </div> <!-- /contentPagination -->
+                          <?php endif; ?>
 
-                        <a href="#" class="buttonPrev">PREV</a>
-                        <a href="#" class="buttonNext">NEXT</a>
+                        <?php $counter++; endforeach; ?>
+                        <?php if( $counter % $perPage != 1 ) echo "</div>"; ?>
+                      </div>
 
-                        <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
+                      <?php wp_reset_postdata(); ?>
                     <?php endif; ?>
 
 
@@ -91,7 +114,6 @@
               </div>
             <?php $countContent ++; ?>
             <?php endwhile; ?>
-
           </div>
         <?php endif; ?>
 

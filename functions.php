@@ -54,3 +54,12 @@ function load_posts_by_ajax_callback() {
 	endif;
 
 }
+
+function polylang_flags_shortcode() {
+    ob_start();
+    pll_the_languages( array('show_flags'=>1,'show_names'=>0) );
+    $flags = ob_get_clean();
+    return '<ul class="polylang-flags">' . $flags . '</ul>';
+}
+
+add_shortcode('POLYLANG', 'polylang_flags_shortcode');

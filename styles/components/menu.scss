@@ -35,6 +35,15 @@
   display: none;
 }
 
+.menu-pagination {
+  .slick-slide {
+    height: auto !important;
+  }
+  .slick-dots li button:before {
+    font-size: 16px;
+  }
+}
+
 
 @media only screen and (min-width: 960px) {
 

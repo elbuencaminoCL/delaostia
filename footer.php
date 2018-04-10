@@ -37,7 +37,7 @@
           infinite: true,
           slidesToShow: 3,
           variableWidth: true,
-          autoplay: false,
+          autoplay: true,
           autoplaySpeed: 2500,
           responsive: [
             {
@@ -276,6 +276,7 @@
           page++;
         });
       };
+
     </script>
 
   </body>
