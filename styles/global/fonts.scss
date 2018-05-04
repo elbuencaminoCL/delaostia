@@ -144,4 +144,28 @@ a {
     }
   }
 
+  .f-josefin-23 {
+    &.f-beer-desc {
+      p {
+        line-height: 1.2;
+        font-size: 22px;
+      }
+    }
+  }
+
+}
+
+
+
+@media only screen and (min-width: 1200px) {
+
+  .f-josefin-23 {
+    &.f-beer-desc {
+      p {
+        line-height: 1.6;
+        font-size: 23px;
+      }
+    }
+  }
+
 }

@@ -6,45 +6,29 @@
     </figure>
 
     <div class="container beer-content-row">
-      <h1 class="center-xs mg-top-60 f-white f-title"><?php the_field( 'clone_beer_title' ); ?></h1> <!-- titulo -->
-      <p class="center-xs mg-bottom-60 f-white f-josefin-23"><?php the_field( 'clone_beer_subtitle' ); ?></p>
+      <div>
+        <h1 class="center-xs mg-top-60 f-white f-title"><?php the_field( 'clone_beer_title' ); ?></h1> <!-- titulo -->
+        <p class="center-xs mg-bottom-60 f-white f-josefin-23"><?php the_field( 'clone_beer_subtitle' ); ?></p>
+      </div>
 
       <?php if ( have_rows( 'clone_beer_logo_repeater' ) ) : ?>
-        <?php $counterBeer = 1; ?>
+        <?php while ( have_rows( 'clone_beer_logo_repeater' ) ) : the_row(); ?>
 
-        <div class="row row-xs-1 row-md-4 center-xs middle-xs beer-row-logo">
-          <?php while ( have_rows( 'clone_beer_logo_repeater' ) ) : the_row(); ?>
-
-            <div class="col-xs-12 col-md-3 beer-col-logo">
-              <figure class="beer-figure-logo">
-                <a href="#popup-<?= $counterBeer; ?>" class="popup-link #popup-<?= $counterBeer; ?>">
-                  <img src="<?php the_sub_field( 'beer_logo' ); ?>" class="beerLogo"/>
-                </a>
+          <div class="row row-xs-1 row-md-2 row-xlg-2 middle-xs beer-row-logo space-bottom">
+            <div class="col-xs-12 col-md-3 col-xlg-2 pd-5">
+              <figure class="beer-figure-logo center-xs">
+                <img src="<?php the_sub_field( 'beer_logo' ); ?>" class="beerLogo"/>
               </figure>
-
-              <div class="modalWrapper popup-<?= $counterBeer; ?>" id="popup-<?= $counterBeer; ?>">
-                <div class="row row-xs-1 row-md-2 start-xs middle-xs popup-contenedor bg-blue-dark">
-                  <div class="col-xs-12 col-md-8 beer-reveal mg-bottom-xs-30">
-                    <h1 class="f-white f-title beer-title"><?php the_sub_field( 'beer_modal_title' ); ?></h1> <!-- titulo -->
-                    <div class="f-josefin-23 beer-desc"><?php the_sub_field( 'beer_modal_desc' ); ?></div>
-                  </div>
-
-                  <div class="col-xs-12 col-md-4 center-xs">
-                    <figure>
-                      <img src="<?php the_sub_field( 'beer_logo' ); ?>" class="beer-logo-modal" />
-                    </figure>
-                  </div>
-
-                  <a class="popup-cerrar popupClose" href="#">X</a>
-                </div>
-              </div>
             </div>
 
-          <?php $counterBeer ++; ?>
-          <?php endwhile; ?>
-        </div>
-      <?php endif; ?>
+            <div class="col-xs-12 col-md-9 col-xlg-10 pd-right-15">
+              <h1 class="f-white f-title beer-title"><?php the_sub_field( 'beer_modal_title' ); ?></h1> <!-- titulo -->
+              <div class="f-white f-josefin-23 f-beer-desc"><?php the_sub_field( 'beer_modal_desc' ); ?></div>
+            </div>
+          </div>
 
+        <?php endwhile; ?>
+      <?php endif; ?>
     </div>
   </div>
 

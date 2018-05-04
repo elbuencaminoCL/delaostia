@@ -51,6 +51,8 @@ a.popup-cerrar {
 }
 
 .beer-figure-logo {
+  background-color: white;
+  padding: 16px;
   img {
     max-width: 200px;
     max-height: 200px;
@@ -58,11 +60,9 @@ a.popup-cerrar {
 }
 
 .beer-row-logo {
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
+  background-color: #083c61;
+  border-radius: 10px;
+  margin: 0 15px;
 }
 
 .beer-col-logo {
@@ -196,9 +196,10 @@ a.popup-cerrar {
     max-width: initial;
   }
 
-
-
-
+  .beer-figure-logo {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
 
 }
 

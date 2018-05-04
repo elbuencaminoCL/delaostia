@@ -573,4 +573,50 @@ $space-bottom-small-lg: 15px;
     }
   }
 
+  @for $n from 1 through 12 {
+    .row-xs-#{$n},
+    .row-sm-#{$n},
+    .row-md-#{$n},
+    .row-lg-#{$n} {
+      @for $i from 1 through 12 {
+        & > .col-xlg-#{$i} {
+          @if $n > 1 {
+            &:nth-of-type( #{$n}n + #{$n} ) {
+              margin-right: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @for $n from 1 through 12 {
+    .row-xlg-#{$n} {
+      @for $i from 1 through 12 {
+        & > .col-xlg-#{$i} {
+          flex-basis: calc(100% * #{$i}/12 - ( #{$gutter-lg} - #{$gutter-lg} * #{$i}/12));
+          max-width: calc(100% * #{$i}/12 - ( #{$gutter-lg} - #{$gutter-lg} * #{$i}/12));
+          margin-right: $gutter-lg;
+          @if $n > 1 {
+            &:nth-of-type( #{$n}n + #{$n} ) {
+              margin-right: 0;
+            }
+          }
+          @if $i == 12 {
+            margin-right: 0;
+          }
+        }
+      }
+      &.no-gutter {
+        @for $i from 1 through 12 {
+          & > .col-xlg-#{$i} {
+            flex-basis: calc(8.333% * #{$i});
+            max-width: calc(8.333% * #{$i});
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+
 }
