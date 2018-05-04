@@ -24,23 +24,25 @@
       <?php while ( have_rows( 'banner_banner_repeater' ) ) : the_row(); ?>
 
         <div class="container row center-xs middle-xs banner-row-content">
-          <div class="f-josefin-16">
+          <div>
             <figure class="logo-site-figure mg-bottom-md-120">
               <a href="/"><img src="<?php the_sub_field( 'banner_logo_site' ); ?>" class="mg-bottom-xs-30 mg-bottom-md-15"></a>
 
             <?php if ( have_rows( 'banner_title_repeater' ) ) : ?>
               <?php while ( have_rows( 'banner_title_repeater' ) ) : the_row(); ?>
-                <p class="f-small-xs f-normal-md mg-bottom-xs-30 mg-top-xs-30"><?php the_sub_field( 'banner_title' ); ?></p>
+                <p class="f-josefin-22 mg-bottom-xs-30 mg-top-xs-30"><?php the_sub_field( 'banner_title' ); ?></p>
               </figure>
               <?php endwhile; ?>
 
             <?php endif; ?>
 
-            <p class="f-small-xs f-normal-md"><?php the_sub_field( 'banner_address' ); ?><a href="<?php the_sub_field( 'banner_link_button' ); ?>" class="f-white" target="_blanck"><?php the_sub_field( 'banner_text_button' ); ?></a></p>
+            <p class="f-josefin-18 map"><?php the_sub_field( 'banner_address' ); ?><a href="<?php the_sub_field( 'banner_link_button' ); ?>" class="f-white" target="_blanck"><?php the_sub_field( 'banner_text_button' ); ?></a></p>
 
             <?php if ( have_rows( 'banner_pbx_repeater' ) ) : ?>
               <?php while ( have_rows( 'banner_pbx_repeater' ) ) : the_row(); ?>
-                <p class="f-small-xs f-normal-md"><a href="tel:+<?php the_sub_field( 'banner_pbx' ); ?>" class="f-white"><?php the_sub_field( 'banner_pbx' ); ?></a></p>
+                <p class="f-josefin-18 map">
+                  <a href="tel:+<?php the_sub_field( 'banner_pbx' ); ?>" class="f-white"><?php the_sub_field( 'banner_pbx' ); ?></a>
+                </p>
               <?php endwhile; ?>
             <?php endif; ?>
 

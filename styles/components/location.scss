@@ -12,7 +12,7 @@
 }
 
 .tabs-content {
-  background-color: #f8904b;
+  background-color: #db732e;
   border: 0;
   padding: 20px;
 }
@@ -35,11 +35,18 @@
 }
 
 .location-accordion-content {
-  background-color: #f8904b;
+  background-color: #db732e;
 }
 
 .z-index-2 {
   z-index: 2;
+}
+
+.location-map-figure {
+  img {
+    max-height: 380px;
+    width: 100%;
+  }
 }
 
 

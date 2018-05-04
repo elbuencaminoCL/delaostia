@@ -42,7 +42,7 @@
                 </div>
 
                  <div class="col-xs-12 col-md-6 col-lg-4">
-                  <figure>
+                  <figure class="location-map-figure">
                     <a href="<?php the_field( 'location_map_link' ); ?>">
                       <img src="<?php the_sub_field( 'location_map' ); ?>">
                     </a>

@@ -37,7 +37,6 @@
 
                   <a class="popup-cerrar popupClose" href="#">X</a>
                 </div>
-
               </div>
             </div>
 

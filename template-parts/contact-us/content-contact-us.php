@@ -12,14 +12,14 @@
             <a href="/"><img src="<?php the_field( 'clone_contact_logo_site' ); ?>"></a>
           </figure>
 
-          <p class="f-white f-josefin-16-sb"><?php the_field( 'clone_contact_address' ); ?>
+          <p class="f-white f-josefin-20"><?php the_field( 'clone_contact_address' ); ?>
             <a href="<?php the_field( 'clone_contact_link_button'); ?>" class="f-white"><?php the_field( 'clone_contact_text_button' ); ?></a>
           </p>
 
           <?php if ( have_rows( 'clone_contact_pbx_repeater' ) ) : ?>
             <?php while ( have_rows( 'clone_contact_pbx_repeater' ) ) : the_row(); ?>
               <div class="mg-bottom-xs-15 mg-bottom-md-30 f-white">
-                <a href="tel:+<?php the_sub_field( 'contact_pbx' ); ?>" class="f-white f-josefin-16-sb" target="_blanck">
+                <a href="tel:+<?php the_sub_field( 'contact_pbx' ); ?>" class="f-white f-josefin-20" target="_blanck">
                   <?php the_sub_field( 'contact_pbx' ); ?>
                 </a>
               </div>

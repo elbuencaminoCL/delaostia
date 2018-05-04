@@ -76,8 +76,8 @@
   margin-right: 15px;
   &.is-active {
     a {
-      background-color: #f8904b;
-      border: 2px solid #f8904b;
+      background-color: #db732e;
+      border: 2px solid #db732e;
       color: white;
     }
   }
@@ -88,10 +88,11 @@
     text-transform: uppercase;
     border: 2px solid white;
     margin-top: 15px;
+    border-radius: 12px;
     &:hover,
     &:focus {
-      background-color: #f8904b;
-      border: 2px solid #f8904b;
+      background-color: #db732e;
+      border: 2px solid #db732e;
       color: white;
     }
   }
@@ -102,7 +103,7 @@
 }
 
 :last-child:not(.is-active) > .accordion-title:focus {
-  border: 2px solid #f8904b;
+  border: 2px solid #db732e;
 }
 
 :last-child>.accordion-content:last-child {

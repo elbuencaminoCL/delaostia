@@ -10,6 +10,18 @@
   font-weight: bold;
 }
 
+.f-josefin-20 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.f-josefin-22 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+}
+
 .f-josefin-16-sb {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 16px;
@@ -20,6 +32,10 @@
   font-family: 'Josefin Sans', sans-serif;
   font-size: 18px !important;
   font-weight: bold;
+  &.map {
+    font-size: 16px !important;
+    font-weight: 500;
+  }
 }
 
 .f-josefin-18-sb {
@@ -47,6 +63,11 @@
 
 .F {
   text-transform: uppercase;
+}
+
+.f-xbigger {
+  font-size: 22px;
+  line-height: 1.2;
 }
 
 .f-bigger {
@@ -107,6 +128,20 @@ a {
 
   .f-normal-md {
     font-size: 16;
+  }
+
+  .f-josefin-20 {
+    font-size: 20px;
+  }
+
+  .f-josefin-22 {
+    font-size: 22px;
+  }
+
+  .f-josefin-18 {
+    &.map {
+      font-size: 18px !important;
+    }
   }
 
 }
