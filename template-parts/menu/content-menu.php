@@ -27,8 +27,8 @@
           <div class="tabs center-xs" data-responsive-accordion-tabs="tabs small-accordion large-tabs" id="menuTabs" data-allow-all-closed="true">
           <?php while ( have_rows( 'menu_repeater' ) ) : the_row(); ?>
 
-            <li class="tab-accordion-title tabs-title <?= ($count == 1) ? 'is-active' : ''; ?>">
-              <a href="#tab-<?= $count; ?>" aria-selected="true" class="f-josefin-18"><?php the_sub_field( 'menu_tab_name' ); ?></a>
+            <li class="accordion-item-location tab-accordion-title tabs-title <?= ($count == 1) ? 'is-active' : ''; ?>">
+              <a href="#tab-<?= $count; ?>" aria-selected="true" class="f-josefin-18 accordion-title-location"><?php the_sub_field( 'menu_tab_name' ); ?></a>
             </li>
 
           <?php $count ++; ?>
@@ -43,7 +43,7 @@
 
             <?php while ( have_rows( 'menu_repeater' ) ) : the_row(); ?>
 
-              <div class="tabs-panel <?= ($countContent == 1) ? 'is-active' : ''; ?>" id="tab-<?= $countContent; ?>">
+              <div class="accordion-content-location tabs-panel <?= ($countContent == 1) ? 'is-active' : ''; ?>" id="tab-<?= $countContent; ?>">
                 <div class="row row-xs-1 row-md-2 row-lg-2 no-gutter f-white">
                   <div class="col-xs-12 col-md-7 col-lg-8 menu-col-1">
                     <h2 class="menu-content-title space-bottom f-josefin-66"><?php the_sub_field('menu_content_title'); ?></h2>

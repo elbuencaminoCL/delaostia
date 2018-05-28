@@ -38,6 +38,38 @@
   color: white;
 }
 
+.accordion-item-location:first-child>:first-child {
+  border-radius: 10px;
+}
+
+.accordion-item-location:first-child {
+  &.is-active {
+    a {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+}
+
+.accordion-item-location:last-child {
+  border-radius: 10px;
+  &.is-active {
+    a {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+}
+
+.accordion-item-location:last-child {
+  &.is-active {
+    a {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+}
+
 :last-child:not(.is-active) > .accordion-title {
   &.accordion-xs {
     border: 1px solid #058;
@@ -54,6 +86,19 @@
   margin-bottom: 0;
 }
 
+.accordion-item-location {
+  &.is-active {
+    a {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+}
+
+.accordion-content-location {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
 
 /* Tabs */
 
@@ -88,13 +133,19 @@
     text-transform: uppercase;
     border: 2px solid white;
     margin-top: 15px;
-    border-radius: 12px;
+    border-radius: 10px;
     &:hover,
     &:focus {
       background-color: #db732e;
       border: 2px solid #db732e;
       color: white;
     }
+  }
+}
+
+:last-child:not(.is-active)>.accordion-title {
+  &.accordion-title-location {
+    border-radius: 10px;
   }
 }
 
@@ -108,6 +159,48 @@
 
 :last-child>.accordion-content:last-child {
   border-bottom: 0;
+}
+
+
+
+@media only screen and ( min-width: 1152px ) {
+
+  .accordion {
+    padding: 0;
+  }
+
+  .mg-accordion {
+    margin-bottom: 0;
+  }
+
+  .accordion-item-location {
+    &.is-active {
+      a {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+    }
+  }
+
+  .accordion-item-location:first-child {
+    &.is-active {
+      a {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+    }
+  }
+
+  .accordion-item-location:last-child {
+    border-radius: 10px;
+    &.is-active {
+      a {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+    }
+  }
+
 }
 
 

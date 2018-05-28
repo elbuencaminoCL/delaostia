@@ -13,8 +13,8 @@
         <div class="tabs center-xs" data-responsive-accordion-tabs="tabs small-accordion large-tabs" id="location-tabs" data-allow-all-closed="true">
           <?php while ( have_rows( 'location_content_tabs_repeater' ) ) : the_row(); ?>
 
-            <li class="tab-accordion-title tabs-title <?= ($countLocation == 1) ? 'is-active' : ''; ?>">
-              <a href="#tabLocation-<?= $countLocation; ?>" aria-selected="true" class="tab-ancla f-bigger"><?php the_sub_field( 'location_tab_text' ); ?></a>
+            <li class="tab-accordion-title tabs-title accordion-item-location <?= ($countLocation == 1) ? 'is-active' : ''; ?>">
+              <a href="#tabLocation-<?= $countLocation; ?>" aria-selected="true" class="accordion-title-location tab-ancla f-bigger"><?php the_sub_field( 'location_tab_text' ); ?></a>
             </li>
 
         <?php $countLocation ++; ?>
@@ -29,7 +29,7 @@
           <?php while ( have_rows( 'location_content_tabs_repeater' ) ) : the_row(); ?>
 
             <div class="tabs-panel <?= ($countContentLocation == 1) ? 'is-active' : ''; ?>" id="tabLocation-<?= $countContentLocation; ?>">
-              <div class="row row-xs-1 row-md-2 row-lg-2 f-white pd-15 location-accordion-content">
+              <div class="row row-xs-1 row-md-2 row-lg-2 f-white pd-15 accordion-content-location location-accordion-content">
                 <div class="col-xs-12 col-md-6 col-lg-8 space-bottom">
                   <?php if ( have_rows( 'location_title_desc_repeater' ) ) : ?>
                     <?php while ( have_rows( 'location_title_desc_repeater' ) ) : the_row(); ?>
