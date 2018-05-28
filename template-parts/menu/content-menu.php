@@ -1,11 +1,8 @@
-<section id="menu" class="">
+<section id="menu" style="background-image: url( '<?php the_field( 'menu_bg_image' ); ?>' ); ">
   <div class="menu-row mg-accordion">
-    <figure class="menu-bg-figure hide-xs show-lg">
-      <img src="<?php the_field( 'menu_bg_image' ); ?>">
-    </figure>
 
-    <div class="container menu-content-row mg-bottom-xs-60">
-      <h1 class="mg-30-0 center-xs f-white f-title"><?php the_field( 'menu_title' ); ?></h1>
+    <div class="container menu-content-row pd-90-0">
+      <h1 class="center-xs f-white f-title"><?php the_field( 'menu_title' ); ?></h1>
 
       <div class="col-xs-12 menu-col-2 hide-md">
         <?php if ( have_rows( 'menu_full_repeater' ) ) : ?>
@@ -48,6 +45,11 @@
                   <div class="col-xs-12 col-md-7 col-lg-8 menu-col-1">
                     <h2 class="menu-content-title space-bottom f-josefin-66"><?php the_sub_field('menu_content_title'); ?></h2>
 
+
+                    <figure class="menu-image-main-figure">
+                      <img src="<?php the_sub_field('menu_image_main') ?>">
+                    </figure>
+
                     <?php
 
                     $fieldsRelations = get_sub_field('menu_content');
@@ -73,12 +75,12 @@
                               </div>
                               <?php endif; ?>
 
-                              <div class="col-xs-6 col-sm-8 col-md-6 col-lg-8 menu-col-title-desc">
+                              <div class="col-xs-6 col-sm-8 col-md-5 col-lg-7 menu-col-title-desc">
                                 <p class="F f-josefin-25"><strong><?php the_field('menu_title_plate'); ?></strong></p>
                                 <p class="f-josefin-16-sb"><?php the_field('menu_desc'); ?></p>
                               </div>
 
-                              <div class="col-xs-3 col-sm-2 col-md-3 col-lg-2">
+                              <div class="col-xs-3 col-sm-2 col-md-4 col-lg-3">
                                 <img src="<?php the_field('menu_image'); ?>" class="menu-image">
                               </div>
                             </div>

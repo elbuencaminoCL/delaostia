@@ -1,10 +1,15 @@
 
+#menu {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .menu-row {
   position: relative;
 }
 
 .menu-image {
-  max-width: 75px;
+  max-width: 150px;
 }
 
 .menu-col-1 {
@@ -44,12 +49,21 @@
   }
 }
 
+.menu-image-main-figure {
+  img {
+    max-height: 260px;
+    width: 100%;
+    margin-bottom: 30px;
+    object-fit: cover;
+  }
+}
+
 
 @media only screen and (min-width: 960px) {
 
   .menu-bg-figure {
     img {
-      height: 1080px;
+      height: 1457px;
       width: 100%;
     }
   }
@@ -59,12 +73,6 @@
 
 
 @media only screen and (min-width: 1200px) {
-  .menu-content-row {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
+
 
 }
